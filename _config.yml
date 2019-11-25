@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: 那1抹微笑
+subtitle: '把心方正，一帆风顺；把心放平，风平浪静。'
+description: '涉猎范围Java、Nginx、MySQL'
 keywords:
-author: John Doe
-language: en
+author: xywang
+language: zh-CN
 timezone: ''
 
 # URL
@@ -90,7 +90,19 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
+
+#type: tags
+#comments: false
+
+type: categories
+comments: false
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
