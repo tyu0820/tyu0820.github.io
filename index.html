@@ -205,6 +205,91 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/29/POI%E7%94%9F%E6%88%90%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8%E7%9A%84%E6%95%B0%E9%87%8F%E9%99%90%E5%88%B6%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xian Yu Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="那1抹微笑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/29/POI%E7%94%9F%E6%88%90%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8%E7%9A%84%E6%95%B0%E9%87%8F%E9%99%90%E5%88%B6%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">POI生成下拉列表的数量限制问题</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-11-29 11:44:51 / 修改时间：13:57:50" itemprop="dateCreated datePublished" datetime="2019-11-29T11:44:51+08:00">2019-11-29</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>POI导出excel时，使用以下方法下拉框内容超过255会报错</p>
+<pre><code>ExcelUtils.addDataValidationXls(sheet, roomTypeArray, &quot;请选择下拉框中的内容填写&quot;, j+2, j+2, 3, 3);</code></pre><p>解决方法：创建一个隐藏的sheet页，把下拉框的内容放到这个sheet页中，然后用公式引用</p>
+<pre><code>HSSFSheet hidden = wb.createSheet(&quot;hidden&quot;); 
+int count = 0;
+if(CollectionUtils.isNotEmpty(typeList)){
+    count = typeList.size();
+    for(int t=0;t&lt;typeList.size();t++){
+        TypeDTO dto=typeList.get(t);
+        HSSFRow hrow = hidden.createRow(t); 
+        HSSFCell hcell = hrow.createCell(0); 
+        hcell.setCellValue(dto.getTypeName());
+    }
+}
+wb.setSheetHidden(wb.getSheetIndex(&quot;hidden&quot;), true);
+Name namedCell=null;
+namedCell = wb.createName(); 
+namedCell.setNameName(&quot;hidden&quot;);
+String n=&quot;hidden&quot;;
+namedCell.setRefersToFormula(n+&quot;!$A$1:$A$&quot; + roomCount); 
+DVConstraint constraint = DVConstraint.createFormulaListConstraint(&quot;hidden&quot;);
+
+int totalRowNum = 1000;
+String sheetName=&quot;测试&quot;;
+CellRangeAddressList addressList = new CellRangeAddressList(1, totalRowNum, 3, 3);
+HSSFDataValidation validation = new HSSFDataValidation(addressList, constraint); 
+HSSFSheet sheet = wb.getSheet(sheetName);
+sheet.addValidationData(validation);
+wb.setSheetHidden(0, true); </code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/29/IDEA%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%85%A5maven%E9%A1%B9%E7%9B%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -334,7 +419,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
