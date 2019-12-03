@@ -46,28 +46,31 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="那1抹微笑">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="EXPLAIN基本语法EXPLAIN SELECT * FROM test ORDER BY scrq;字段说明id标识select查询的序列号。如果没有子查询或者关联查询，只有唯一的select，每行都将显示1；如果有子查询或者关联查询内层的select语句一般会顺序编号。  id相同：从上到下顺序执行 id不同：值越大，优先级越高，越先被执行 id为null：表示用来合并结果集的，在sql中使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EXPALIN分析SQL执行计划">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;29&#x2F;EXPALIN%E5%88%86%E6%9E%90SQL%E6%89%A7%E8%A1%8C%E8%AE%A1%E5%88%92&#x2F;index.html">
 <meta property="og:site_name" content="那1抹微笑">
+<meta property="og:description" content="EXPLAIN基本语法EXPLAIN SELECT * FROM test ORDER BY scrq;字段说明id标识select查询的序列号。如果没有子查询或者关联查询，只有唯一的select，每行都将显示1；如果有子查询或者关联查询内层的select语句一般会顺序编号。  id相同：从上到下顺序执行 id不同：值越大，优先级越高，越先被执行 id为null：表示用来合并结果集的，在sql中使">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-03T11:33:03.969Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2019/11/29/EXPALIN%E5%88%86%E6%9E%90SQL%E6%89%A7%E8%A1%8C%E8%AE%A1%E5%88%92/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>那1抹微笑</title>
+  <title>EXPALIN分析SQL执行计划 | 那1抹微笑</title>
   
 
 
@@ -201,81 +204,10 @@
             
 
   <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/03/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6413/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xian Yu Wang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="那1抹微笑">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/03/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6413/" class="post-title-link" itemprop="url">上传文件413</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-12-03 16:59:49 / 修改时间：17:16:32" itemprop="dateCreated datePublished" datetime="2019-12-03T16:59:49+08:00">2019-12-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
-          <h2 id="上传文件报413-Request-Entity-Too-Large"><a href="#上传文件报413-Request-Entity-Too-Large" class="headerlink" title="上传文件报413 Request Entity Too Large"></a>上传文件报413 Request Entity Too Large</h2><p>请求实体太大导入报错，可以修改nginx.conf中的以下几项配置，修改后执行命令nginx -s reload，修改配置后重新加载生效</p>
-<pre><code>client_max_body_size 1000m;
-
-client_header_buffer_size 16;
-
-large_client_header_buffers 4 128k;</code></pre><ol>
-<li><p>在http{ }中设置，控制全局nginx所有请求报文大小：client_max_body_size 1000m;</p>
-</li>
-<li><p>在server{ }中设置，控制该server的所有请求报文大小：client_max_body_size 1000m;</p>
-</li>
-<li><p>在location{ }中设置，控制满足该路由规则的请求报文大小：client_max_body_size 1000m;</p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
   
   
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/29/EXPALIN%E5%88%86%E6%9E%90SQL%E6%89%A7%E8%A1%8C%E8%AE%A1%E5%88%92/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -289,8 +221,7 @@ large_client_header_buffers 4 128k;</code></pre><ol>
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/29/EXPALIN%E5%88%86%E6%9E%90SQL%E6%89%A7%E8%A1%8C%E8%AE%A1%E5%88%92/" class="post-title-link" itemprop="url">EXPALIN分析SQL执行计划</a>
+          EXPALIN分析SQL执行计划
         </h1>
 
         <div class="post-meta">
@@ -321,7 +252,7 @@ large_client_header_buffers 4 128k;</code></pre><ol>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="EXPLAIN基本语法"><a href="#EXPLAIN基本语法" class="headerlink" title="EXPLAIN基本语法"></a>EXPLAIN基本语法</h2><pre><code>EXPLAIN SELECT * FROM test ORDER BY scrq;</code></pre><h2 id="字段说明"><a href="#字段说明" class="headerlink" title="字段说明"></a>字段说明</h2><h3 id="id"><a href="#id" class="headerlink" title="id"></a>id</h3><p>标识select查询的序列号。如果没有子查询或者关联查询，只有唯一的select，每行都将显示1；如果有子查询或者关联查询内层的select语句一般会顺序编号。</p>
+        <h2 id="EXPLAIN基本语法"><a href="#EXPLAIN基本语法" class="headerlink" title="EXPLAIN基本语法"></a>EXPLAIN基本语法</h2><pre><code>EXPLAIN SELECT * FROM test ORDER BY scrq;</code></pre><h2 id="字段说明"><a href="#字段说明" class="headerlink" title="字段说明"></a>字段说明</h2><h3 id="id"><a href="#id" class="headerlink" title="id"></a>id</h3><p>标识select查询的序列号。如果没有子查询或者关联查询，只有唯一的select，每行都将显示1；如果有子查询或者关联查询内层的select语句一般会顺序编号。</p>
 <ul>
 <li>id相同：从上到下顺序执行</li>
 <li>id不同：值越大，优先级越高，越先被执行</li>
@@ -369,197 +300,39 @@ large_client_header_buffers 4 128k;</code></pre><ol>
 <li>Distinct：一旦MySQL找到了与行相联合匹配的行，就不再搜索了。</li>
 </ul>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/29/POI%E7%94%9F%E6%88%90%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8%E7%9A%84%E6%95%B0%E9%87%8F%E9%99%90%E5%88%B6%E9%97%AE%E9%A2%98/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xian Yu Wang">
-      <meta itemprop="description" content="">
-    </span>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/29/POI%E7%94%9F%E6%88%90%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8%E7%9A%84%E6%95%B0%E9%87%8F%E9%99%90%E5%88%B6%E9%97%AE%E9%A2%98/" rel="next" title="POI生成下拉列表的数量限制问题">
+                  <i class="fa fa-chevron-left"></i> POI生成下拉列表的数量限制问题
+                </a>
+            </div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="那1抹微笑">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/29/POI%E7%94%9F%E6%88%90%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8%E7%9A%84%E6%95%B0%E9%87%8F%E9%99%90%E5%88%B6%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">POI生成下拉列表的数量限制问题</a>
-        </h1>
+            <span class="post-nav-divider"></span>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-11-29 11:44:51 / 修改时间：13:57:50" itemprop="dateCreated datePublished" datetime="2019-11-29T11:44:51+08:00">2019-11-29</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>POI导出excel时，使用以下方法下拉框内容超过255会报错</p>
-<pre><code>ExcelUtils.addDataValidationXls(sheet, roomTypeArray, &quot;请选择下拉框中的内容填写&quot;, j+2, j+2, 3, 3);</code></pre><p>解决方法：创建一个隐藏的sheet页，把下拉框的内容放到这个sheet页中，然后用公式引用</p>
-<pre><code>HSSFSheet hidden = wb.createSheet(&quot;hidden&quot;); 
-int count = 0;
-if(CollectionUtils.isNotEmpty(typeList)){
-    count = typeList.size();
-    for(int t=0;t&lt;typeList.size();t++){
-        TypeDTO dto=typeList.get(t);
-        HSSFRow hrow = hidden.createRow(t); 
-        HSSFCell hcell = hrow.createCell(0); 
-        hcell.setCellValue(dto.getTypeName());
-    }
-}
-wb.setSheetHidden(wb.getSheetIndex(&quot;hidden&quot;), true);
-Name namedCell=null;
-namedCell = wb.createName(); 
-namedCell.setNameName(&quot;hidden&quot;);
-String n=&quot;hidden&quot;;
-namedCell.setRefersToFormula(n+&quot;!$A$1:$A$&quot; + roomCount); 
-DVConstraint constraint = DVConstraint.createFormulaListConstraint(&quot;hidden&quot;);
-
-int totalRowNum = 1000;
-String sheetName=&quot;测试&quot;;
-CellRangeAddressList addressList = new CellRangeAddressList(1, totalRowNum, 3, 3);
-HSSFDataValidation validation = new HSSFDataValidation(addressList, constraint); 
-HSSFSheet sheet = wb.getSheet(sheetName);
-sheet.addValidationData(validation);
-wb.setSheetHidden(0, true); </code></pre>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/12/03/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6413/" rel="prev" title="上传文件413">
+                  上传文件413 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/29/IDEA%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%85%A5maven%E9%A1%B9%E7%9B%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xian Yu Wang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="那1抹微笑">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/29/IDEA%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%85%A5maven%E9%A1%B9%E7%9B%AE/" class="post-title-link" itemprop="url">IDEA配置导入maven项目</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-11-29 11:31:22 / 修改时间：11:32:06" itemprop="dateCreated datePublished" datetime="2019-11-29T11:31:22+08:00">2019-11-29</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1、安装配置本地maven"><a href="#1、安装配置本地maven" class="headerlink" title="1、安装配置本地maven"></a>1、安装配置本地maven</h3><p>配置文件路径：<br>E:\apache-maven-3.3.9\conf\settings.xml</p>
-<p>需要修改以下两个配置：</p>
-<pre><code>&lt;localRepository&gt;E:/m2/repository&lt;/localRepository&gt;
-&lt;mirrors&gt;
-    &lt;!-- mirror
-     | Specifies a repository mirror site to use instead of a given repository. The repository that
-     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
-     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
-     |
-    &lt;mirror&gt;
-      &lt;id&gt;mirrorId&lt;/id&gt;
-      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
-      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
-      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
-    &lt;/mirror&gt;
-     --&gt;
-    &lt;mirror&gt;
-        &lt;id&gt;repo-aliyun&lt;/id&gt;
-        &lt;name&gt;aliyun maven&lt;/name&gt;
-        &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
-        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-    &lt;/mirror&gt;
-&lt;/mirrors&gt;</code></pre><h3 id="2、项目检出配置"><a href="#2、项目检出配置" class="headerlink" title="2、项目检出配置"></a>2、项目检出配置</h3><p>从svn检出项目到工作空间，检出时不创建maven项目，检出之后导入maven项目，选中pom文件导入</p>
-<p><img src="/images/idea/idea_maven2.png" alt="avatar"></p>
-<p><img src="/images/idea/idea_maven3.png" alt="avatar"></p>
-<p>IDEA中配置本地maven路径</p>
-<p><img src="/images/idea/idea_maven1.png" alt="avatar"></p>
-<h3 id="3、热部署"><a href="#3、热部署" class="headerlink" title="3、热部署"></a>3、热部署</h3><p>打开settings 配置热部署2</p>
-<p><img src="/images/idea/idea_deploy1.png" alt="avatar"></p>
-<p><img src="/images/idea/idea_deploy2.png" alt="avatar"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -588,6 +361,7 @@ wb.setSheetHidden(0, true); </code></pre>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#EXPLAIN基本语法"><span class="nav-number">1.</span> <span class="nav-text">EXPLAIN基本语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字段说明"><span class="nav-number">2.</span> <span class="nav-text">字段说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#id"><span class="nav-number">2.1.</span> <span class="nav-text">id</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-type"><span class="nav-number">2.2.</span> <span class="nav-text">select_type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#table"><span class="nav-number">2.3.</span> <span class="nav-text">table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type"><span class="nav-number">2.4.</span> <span class="nav-text">type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#possible-keys"><span class="nav-number">2.5.</span> <span class="nav-text">possible_keys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#key"><span class="nav-number">2.6.</span> <span class="nav-text">key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#key-len"><span class="nav-number">2.7.</span> <span class="nav-text">key_len</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ref"><span class="nav-number">2.8.</span> <span class="nav-text">ref</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rows"><span class="nav-number">2.9.</span> <span class="nav-text">rows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#extra"><span class="nav-number">2.10.</span> <span class="nav-text">extra</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
