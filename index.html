@@ -205,6 +205,128 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/05/JAVA%E5%A4%9A%E4%B8%AA%E6%95%B0%E7%BB%84%E5%85%A8%E6%8E%92%E5%88%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xian Yu Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="那1抹微笑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/05/JAVA%E5%A4%9A%E4%B8%AA%E6%95%B0%E7%BB%84%E5%85%A8%E6%8E%92%E5%88%97/" class="post-title-link" itemprop="url">JAVA多个数组全排列</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-05 11:17:08 / 修改时间：11:37:57" itemprop="dateCreated datePublished" datetime="2019-12-05T11:17:08+08:00">2019-12-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre><code>import java.util.Arrays;
+import java.util.LinkedList;
+/**
+ * 多个数组全排列
+ * 思路:数字的第一位是第一个数组中的一个数，下一个数字为下一个数组中的一个数，以此类推采用递归
+ * @author Administrator
+ */
+public class TestCombine {
+    private static LinkedList&lt;String[]&gt; getCombineList ( LinkedList&lt;String[]&gt; combineList, int courseCount, String[][] courseArrays, int start, int... indexs ){
+        start++;
+        if (start &gt; courseCount - 1){
+            return null;
+        }
+        if (start == 0){
+            indexs = new int[courseArrays.length];
+        }
+        for ( indexs[start] = 0; indexs[start] &lt; courseArrays[start].length; indexs[start]++ ){
+            getCombineList (combineList, courseCount, courseArrays, start, indexs);
+            if (start == courseCount - 1){
+                String[] temp = new String[courseCount];
+                for ( int i = courseCount - 1; i &gt;= 0; i-- ){
+                    temp[start - i] = courseArrays[start - i][indexs[start - i]];
+                }
+                combineList.add (temp);
+            }
+        }
+        return combineList;
+    }
+
+    public static void main ( String[] args ){
+        String[] s1 = { &quot;a1&quot;, &quot;a2&quot;, &quot;a3&quot;,&quot;a4&quot;,&quot;a5&quot;,&quot;a6&quot;,&quot;a7&quot;,&quot;a8&quot;,&quot;a9&quot;,&quot;a10&quot; };
+        String[] s2 = { &quot;b1&quot;, &quot;b2&quot;, &quot;b3&quot;,&quot;b4&quot;,&quot;b5&quot;,&quot;b6&quot;,&quot;b7&quot;,&quot;b8&quot;,&quot;b9&quot;,&quot;b10&quot; };
+        String[] s3 = { &quot;c1&quot;, &quot;c2&quot;, &quot;c3&quot;,&quot;c4&quot;,&quot;c5&quot;,&quot;c6&quot;,&quot;c7&quot;,&quot;c8&quot;,&quot;c9&quot;,&quot;c10&quot; };
+        String[] s4 = { &quot;d1&quot;, &quot;d2&quot;, &quot;d3&quot;,&quot;d4&quot;,&quot;d5&quot;,&quot;d6&quot;,&quot;d7&quot;,&quot;d8&quot;,&quot;d9&quot;,&quot;d10&quot; };
+        String[] s5 = { &quot;e1&quot;, &quot;e2&quot;, &quot;e3&quot;,&quot;e4&quot;,&quot;e5&quot;,&quot;e6&quot;,&quot;e7&quot;,&quot;e8&quot;,&quot;e9&quot;,&quot;e10&quot; };
+        String[] s6 = { &quot;f1&quot;, &quot;f2&quot;, &quot;f3&quot;,&quot;f4&quot;,&quot;f5&quot;,&quot;f6&quot;,&quot;f7&quot;,&quot;f8&quot;,&quot;f9&quot;,&quot;f10&quot; };
+        String[] s7 = { &quot;g1&quot;, &quot;g2&quot;, &quot;g3&quot;,&quot;g4&quot;,&quot;g5&quot;,&quot;g6&quot;,&quot;g7&quot;,&quot;g8&quot;,&quot;g9&quot;,&quot;g10&quot; };
+        String[] s8 = { &quot;h1&quot;, &quot;h2&quot;, &quot;h3&quot;,&quot;h4&quot;,&quot;h5&quot;,&quot;h6&quot;,&quot;h7&quot;,&quot;h8&quot;,&quot;h9&quot;,&quot;h10&quot; };
+        String[] s9 = { &quot;i1&quot;, &quot;i2&quot;, &quot;i3&quot;,&quot;i4&quot;,&quot;i5&quot;,&quot;i6&quot;,&quot;i7&quot;,&quot;i8&quot;,&quot;i9&quot;,&quot;i10&quot; };
+        String[] s10 = { &quot;j1&quot;, &quot;j2&quot;, &quot;j3&quot;,&quot;j4&quot;,&quot;j5&quot;,&quot;j6&quot;,&quot;j7&quot;,&quot;j8&quot;,&quot;j9&quot;,&quot;j10&quot; };
+        String[] s11 = { &quot;k1&quot;, &quot;k2&quot;, &quot;k3&quot;,&quot;k4&quot;,&quot;k5&quot;,&quot;k6&quot;,&quot;k7&quot;,&quot;k8&quot;,&quot;k9&quot;,&quot;k10&quot; };
+        String[][] courseArrays = { s1, s2, s3};
+
+        LinkedList&lt;String[]&gt; combineList = new LinkedList&lt;String[]&gt; ();
+
+        getCombineList(combineList, courseArrays.length, courseArrays, -1);
+
+        for ( int i = 0; i &lt; combineList.size (); i++ ){
+            System.out.println (Arrays.toString (combineList.get (i)));
+        }
+        long num = combineList.size();
+        System.out.println(&quot;组合数:&quot;+num);
+    }
+}</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/04/MySQL%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0group-concat%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -831,20 +953,20 @@ wb.setSheetHidden(0, true); </code></pre>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
