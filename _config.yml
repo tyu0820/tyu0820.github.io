@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
+title: 那1抹微笑
+subtitle: '把心方正，一帆风顺；把心放平，风平浪静。'
 description: ''
 keywords:
-author: John Doe
-language: en
+author: Xian Yu Wang
+language: zh-CN
 timezone: ''
 
 # URL
@@ -90,7 +90,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
