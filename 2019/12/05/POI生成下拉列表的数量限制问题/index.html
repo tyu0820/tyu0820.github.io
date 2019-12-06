@@ -46,14 +46,18 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="那1抹微笑">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;index.html">
+  <meta name="description" content="POI导出excel时，使用以下方法下拉框内容超过255会报错 ExcelUtils.addDataValidationXls(sheet, roomTypeArray, &amp;quot;请选择下拉框中的内容填写&amp;quot;, j+2, j+2, 3, 3);解决方法：创建一个隐藏的sheet页，把下拉框的内容放到这个sheet页中，然后用公式引用 HSSFSheet hidden = wb.crea">
+<meta name="keywords" content="POI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="POI生成下拉列表的数量限制问题">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;POI%E7%94%9F%E6%88%90%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8%E7%9A%84%E6%95%B0%E9%87%8F%E9%99%90%E5%88%B6%E9%97%AE%E9%A2%98&#x2F;index.html">
 <meta property="og:site_name" content="那1抹微笑">
+<meta property="og:description" content="POI导出excel时，使用以下方法下拉框内容超过255会报错 ExcelUtils.addDataValidationXls(sheet, roomTypeArray, &amp;quot;请选择下拉框中的内容填写&amp;quot;, j+2, j+2, 3, 3);解决方法：创建一个隐藏的sheet页，把下拉框的内容放到这个sheet页中，然后用公式引用 HSSFSheet hidden = wb.crea">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-05T06:25:16.500Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/archives/2019/">
+<link rel="canonical" href="http://yoursite.com/2019/12/05/POI%E7%94%9F%E6%88%90%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8%E7%9A%84%E6%95%B0%E9%87%8F%E9%99%90%E5%88%B6%E9%97%AE%E9%A2%98/">
 
 
 <script id="page-configurations">
@@ -61,13 +65,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>归档 | 那1抹微笑</title>
+  <title>POI生成下拉列表的数量限制问题 | 那1抹微笑</title>
   
 
 
@@ -200,169 +204,123 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 7 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/05/POI%E7%94%9F%E6%88%90%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8%E7%9A%84%E6%95%B0%E9%87%8F%E9%99%90%E5%88%B6%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/myphoto.jpg">
+      <meta itemprop="name" content="Xian Yu Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="那1抹微笑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          POI生成下拉列表的数量限制问题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-05 14:25:16" itemprop="dateCreated datePublished" datetime="2019-12-05T14:25:16+08:00">2019-12-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/POI/" itemprop="url" rel="index">
+                    <span itemprop="name">POI</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+        <p>POI导出excel时，使用以下方法下拉框内容超过255会报错</p>
+<pre><code>ExcelUtils.addDataValidationXls(sheet, roomTypeArray, &quot;请选择下拉框中的内容填写&quot;, j+2, j+2, 3, 3);</code></pre><p>解决方法：创建一个隐藏的sheet页，把下拉框的内容放到这个sheet页中，然后用公式引用</p>
+<pre><code>HSSFSheet hidden = wb.createSheet(&quot;hidden&quot;); 
+int count = 0;
+if(CollectionUtils.isNotEmpty(typeList)){
+    count = typeList.size();
+    for(int t=0;t&lt;typeList.size();t++){
+        TypeDTO dto=typeList.get(t);
+        HSSFRow hrow = hidden.createRow(t); 
+        HSSFCell hcell = hrow.createCell(0); 
+        hcell.setCellValue(dto.getTypeName());
+    }
+}
+wb.setSheetHidden(wb.getSheetIndex(&quot;hidden&quot;), true);
+Name namedCell=null;
+namedCell = wb.createName(); 
+namedCell.setNameName(&quot;hidden&quot;);
+String n=&quot;hidden&quot;;
+namedCell.setRefersToFormula(n+&quot;!$A$1:$A$&quot; + roomCount); 
+DVConstraint constraint = DVConstraint.createFormulaListConstraint(&quot;hidden&quot;);
+
+int totalRowNum = 1000;
+String sheetName=&quot;测试&quot;;
+CellRangeAddressList addressList = new CellRangeAddressList(1, totalRowNum, 3, 3);
+HSSFDataValidation validation = new HSSFDataValidation(addressList, constraint); 
+HSSFSheet sheet = wb.getSheet(sheetName);
+sheet.addValidationData(validation);
+wb.setSheetHidden(0, true); </code></pre>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-05T14:25:16+08:00"
-              content="2019-12-05">
-          12-05
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/POI/" rel="tag"># POI</a>
+          </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/05/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6413/" itemprop="url">
-            <span itemprop="name">上传文件413</span>
-          </a>
-      </h2>
+        
 
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/12/05/MySQL%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0group-concat%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6/" rel="next" title="MySQL聚合函数group-concat长度限制">
+                  <i class="fa fa-chevron-left"></i> MySQL聚合函数group-concat长度限制
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/12/05/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6413/" rel="prev" title="上传文件413">
+                  上传文件413 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-05T14:25:16+08:00"
-              content="2019-12-05">
-          12-05
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/05/POI%E7%94%9F%E6%88%90%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8%E7%9A%84%E6%95%B0%E9%87%8F%E9%99%90%E5%88%B6%E9%97%AE%E9%A2%98/" itemprop="url">
-            <span itemprop="name">POI生成下拉列表的数量限制问题</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-05T14:25:16+08:00"
-              content="2019-12-05">
-          12-05
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/05/MySQL%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0group-concat%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6/" itemprop="url">
-            <span itemprop="name">MySQL聚合函数group-concat长度限制</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-05T14:25:16+08:00"
-              content="2019-12-05">
-          12-05
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/05/MySQL%E6%89%A7%E8%A1%8C%E5%A4%A7sql%E6%8A%A5%E9%94%99/" itemprop="url">
-            <span itemprop="name">MySQL执行大sql报错</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-05T14:25:16+08:00"
-              content="2019-12-05">
-          12-05
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/05/IDEA%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%85%A5maven%E9%A1%B9%E7%9B%AE/" itemprop="url">
-            <span itemprop="name">IDEA配置导入maven项目</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-05T14:25:16+08:00"
-              content="2019-12-05">
-          12-05
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/05/EXPALIN%E5%88%86%E6%9E%90SQL%E6%89%A7%E8%A1%8C%E8%AE%A1%E5%88%92/" itemprop="url">
-            <span itemprop="name">EXPALIN分析SQL执行计划</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-05T11:17:08+08:00"
-              content="2019-12-05">
-          12-05
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/05/JAVA%E5%A4%9A%E4%B8%AA%E6%95%B0%E7%BB%84%E5%85%A8%E6%8E%92%E5%88%97/" itemprop="url">
-            <span itemprop="name">JAVA多个数组全排列</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
